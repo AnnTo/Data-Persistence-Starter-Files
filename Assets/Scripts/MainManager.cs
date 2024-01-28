@@ -18,6 +18,7 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
+    private string Name;
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,8 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+        Name = ScoreHolder.Instance.PlayerName;
+        ScoreText.text = $"Score of {Name}: {m_Points}";
     }
 
     private void Update()
@@ -65,7 +68,8 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"Score : {m_Points}";
+
+        ScoreText.text = $"Score of {Name}: {m_Points}";
     }
 
     public void GameOver()

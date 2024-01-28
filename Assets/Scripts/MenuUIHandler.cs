@@ -14,7 +14,7 @@ using UnityEditor;
 public class MenuUIHandler : MonoBehaviour
 {
 
-    public TextMeshPro NameField;
+    public TMPro.TextMeshProUGUI NameField;
     private string name = "Noname";
     private void Start()
     {
