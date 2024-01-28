@@ -15,9 +15,13 @@ public class MenuUIHandler : MonoBehaviour
 {
 
     public TMPro.TextMeshProUGUI NameField;
+    public TMPro.TextMeshProUGUI BestPlayerTextField;
     private string name = "Noname";
     private void Start()
     {
+        if (BestPlayerTextField != null) {
+            BestPlayerTextField.text = "High score: " + ScoreHolder.Instance.BestPlayerName + ": " + ScoreHolder.Instance.BestPlayerScore;
+        }
     }
 
     public void StartNew()
